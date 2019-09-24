@@ -22,7 +22,13 @@ ext {
 
 allprojects {
     repositories {
+        mavenCentral()
+        maven { url "https://raw.githubusercontent.com/tingban/fragmentation/master" }
         google()
         jcenter()
+        //todo 这句话的意思, 如果不加 找不到libs文件夹
+        flatDir {
+            dirs 'libs'
+        }
     }
 }

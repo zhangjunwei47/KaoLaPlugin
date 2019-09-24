@@ -117,7 +117,10 @@ public class MainActivity extends AppCompatActivity {
                 bookCursor.close();
             }
         } else if (v.getId() == R.id.about) {
-            showAbout();
+            //showAbout();
+            Intent intent = new Intent();
+            intent.setClassName(this, "com.didi.virtualapk.demo.MainActivity");
+            startActivity(intent);
         } else if (v.getId() == R.id.webview) {
             LinearLayout linearLayout = (LinearLayout) v.getParent();
             WebView webView = new WebView(this);

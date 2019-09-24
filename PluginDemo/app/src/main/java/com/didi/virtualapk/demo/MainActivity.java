@@ -1,43 +1,36 @@
 package com.didi.virtualapk.demo;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.didi.virtualapk.demo.R;
-import com.didi.virtualapk.demo.aidl.Book;
 import com.didi.virtualapk.demo.manager.UserManager;
 import com.didi.virtualapk.demo.model.User;
 import com.didi.virtualapk.demo.utils.MyConstants;
 import com.didi.virtualapk.demo.utils.MyUtils;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mainx);
         UserManager.sUserId = 2;
-        findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
-
+        findViewById(R.id.inLauncher).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, SecondActivity.class);
-                User user = new User(0, "jake", true);
-                user.book = new Book();
-                intent.putExtra("extra_user", (Serializable) user);
                 startActivity(intent);
             }
         });
@@ -45,8 +38,6 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onResume() {
-        Log.d(TAG, "UserManage.sUserId=" + UserManager.sUserId);
-        persistToFile();
 
         super.onResume();
     }
