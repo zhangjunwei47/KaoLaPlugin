@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.didi.virtualapk.demo.R;
 
 import me.yokeyword.fragmentation.SupportFragment;
+import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 public class SecondFragment extends SupportFragment {
 
@@ -33,5 +34,11 @@ public class SecondFragment extends SupportFragment {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public FragmentAnimator onCreateFragmentAnimator() {
+        return new FragmentAnimator(R.anim.enter_default_transition_animation, R.anim.exit_default_transition_animation, R.anim.from_exit_default_transition_animation,
+                R.anim.from_enter_default_transition_animation);
     }
 }
