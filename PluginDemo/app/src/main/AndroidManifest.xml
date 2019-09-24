@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.didi.virtualapk.demo"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -48,22 +48,22 @@
     <application
         android:name="com.didi.virtualapk.demo.MyApplication"
         android:allowBackup="true"
+        android:configChanges="orientation|screenSize|locale|layoutDirection|keyboard|screenLayout"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-            android:configChanges="orientation|screenSize|locale|layoutDirection|keyboard|screenLayout"
-            android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.didi.virtualapk.demo.MainActivity"
-                android:configChanges="orientation|screenSize|locale|layoutDirection|keyboard|screenLayout"
-                android:label="A">
+            android:configChanges="orientation|screenSize|locale|layoutDirection|keyboard|screenLayout"
+            android:label="A">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category._LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.didi.virtualapk.demo.SecondActivity"
-                android:configChanges="orientation|screenSize|locale|layoutDirection|keyboard|screenLayout"
+            android:configChanges="orientation|screenSize|locale|layoutDirection|keyboard|screenLayout"
             android:label="B" />
         <activity
             android:name="com.didi.virtualapk.demo.ThirdActivity"
@@ -71,16 +71,11 @@
             android:label="C" />
         <activity
             android:name="com.didi.virtualapk.demo.aidl.BookManagerActivity"
-            android:label="@string/title_activity_book_manager" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_book_manager">
         </activity>
         <activity
             android:name="com.didi.virtualapk.demo.messenger.MessengerActivity"
-            android:label="@string/title_activity_messenger" >
+            android:label="@string/title_activity_messenger">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -88,19 +83,18 @@
 
         <service
             android:name="com.didi.virtualapk.demo.messenger.MessengerService"
-            android:process=":remote" >
+            android:process=":remote">
             <intent-filter>
                 <action android:name="com.didi.MessengerService.launch" />
             </intent-filter>
         </service>
         <service
             android:name="com.didi.virtualapk.demo.aidl.BookManagerService"
-            android:process=":remote" >
-        </service>
+            android:process=":remote"></service>
 
         <activity
             android:name="com.didi.virtualapk.demo.provider.ProviderActivity"
-            android:label="@string/title_activity_provider" >
+            android:label="@string/title_activity_provider">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -112,8 +106,7 @@
             android:name="com.didi.virtualapk.demo.provider.BookProvider"
             android:authorities="com.didi.virtualapk.demo.book.provider"
             android:permission="com.didi.virtualapk.demo.PROVIDER"
-            android:process=":provider" >
-        </provider>
+            android:process=":provider"></provider>
 
         <service
             android:name="com.didi.virtualapk.demo.socket.TCPServerService"
@@ -122,7 +115,7 @@
         <activity
             android:name="com.didi.virtualapk.demo.socket.TCPClientActivity"
             android:label="@string/title_activity_tcpclient"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -136,7 +129,7 @@
 
         <activity
             android:name="com.didi.virtualapk.demo.binderpool.BinderPoolActivity"
-            android:label="@string/title_activity_binder_pool" >
+            android:label="@string/title_activity_binder_pool">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

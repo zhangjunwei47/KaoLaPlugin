@@ -57,10 +57,12 @@ dependencies {
 //    implementation 'com.didi.virtualapk:core:0.9.8'
     implementation(name: 'fragmentation_core-debug', ext: 'aar')
     implementation(name: 'fragmentation-debug', ext: 'aar')
-   // implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+
+    //implementation 'com.android.support.constraint:constraint-layout:1.1.1'
 }
 
 apply plugin: 'com.didi.virtualapk.plugin'
+
 
 virtualApk {
     packageId = 0x6f // the package id of Resources.
