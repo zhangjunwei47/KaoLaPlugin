@@ -52,6 +52,7 @@
 
 -keep class com.google.**{*;}
 -keep class sun.misc.Unsafe { *; }
+
 -keepnames class * implements java.io.Serializable
 -keepclassmembers class * implements java.io.Serializable {
     static final long serialVersionUID;

@@ -52,4 +52,5 @@ dependencies {
     //implementation 'com.didi.virtualapk:core:0.9.8'
     implementation project (':CoreLibrary')
     implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4'
 }
