@@ -10,12 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.didi.virtualapk.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,18 +19,11 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        android:text="@string/about"
+        android:text="打开插件首页"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"
         android:layout_marginTop="10dp"
         android:id="@+id/about" />
 
-    <Button
-        android:text="@string/webview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onButtonClick"
-        android:layout_marginTop="10dp"
-        android:id="@+id/webview" />
 </LinearLayout>
