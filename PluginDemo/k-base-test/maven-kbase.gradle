@@ -1,0 +1,19 @@
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: LOCAL_REPO_URL) {
+//                authentication(userName: 'tingban', password: 'vaubMZBfkLoIfyNp')
+            }
+//            repository(url: uri('../repo'))
+            pom.project {
+                version LIBRARY_VERSION
+                artifactId ARTIFACTIDBASE
+                groupId GROUP_ID
+                packaging LIB_TYPE
+                description LIB_DESCRIPTION
+            }
+        }
+    }
+}

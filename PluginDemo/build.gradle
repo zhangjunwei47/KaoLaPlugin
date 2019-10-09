@@ -18,16 +18,18 @@ ext {
     VERSION_COMPILE_SDK = 27
     VERSION_BUILD_TOOLS = '26.0.2'
 
-    VERSION_MIN_SDK = 15
-    VERSION_TARGET_SDK = 25
+    VERSION_MIN_SDK = 17
+    VERSION_TARGET_SDK = 24
 
-    SOURCE_COMPATIBILITY = JavaVersion.VERSION_1_7
+    SOURCE_COMPATIBILITY = JavaVersion.VERSION_1_8
 }
 
 allprojects {
     repositories {
         mavenCentral()
         maven { url "https://raw.githubusercontent.com/tingban/fragmentation/master" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "http://nexus2.tingyun.com/nexus/content/repositories/snapshots/" }
         google()
         jcenter()
         //todo 这句话的意思, 如果不加 找不到libs文件夹
