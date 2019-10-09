@@ -11,9 +11,12 @@ import android.widget.ImageView;
 
 import com.didi.virtualapk.demo.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.yokeyword.fragmentation.SupportFragment;
 
 public class LauncherFragment extends SupportFragment {
+    @BindView(R.id.iv1)
     ImageView imageView;
 
     public static LauncherFragment getInstance() {
@@ -30,8 +33,13 @@ public class LauncherFragment extends SupportFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_launcher, container, false);
-        imageView = view.findViewById(R.id.iv1);
-        imageView.setOnClickListener(v -> extraTransaction().start(new SecondFragment()));
+        ButterKnife.bind(this, view);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                extraTransaction().start(new SecondFragment());
+            }
+        });
         return view;
     }
 
