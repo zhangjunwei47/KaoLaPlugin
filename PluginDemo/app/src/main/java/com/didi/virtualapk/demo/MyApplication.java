@@ -1,5 +1,6 @@
 package com.didi.virtualapk.demo;
 
+import com.didi.virtualapk.demo.utils.MyConstants;
 import com.didi.virtualapk.demo.utils.MyUtils;
 
 import android.app.Application;
@@ -15,7 +16,6 @@ public class MyApplication extends Application {
         super.onCreate();
         String processName = MyUtils.getProcessName(getApplicationContext(),
                 Process.myPid());
-        Log.d(TAG, "application start, process name:" + processName);
         new Thread(new Runnable() {
 
             @Override
@@ -23,10 +23,11 @@ public class MyApplication extends Application {
                 doWorkInBackground();
             }
         }).start();
+
+        Log.e(MyConstants.PLUGIN_TAG, "启动 Application, 进程id = "+ android.os.Process.myPid());
     }
 
     private void doWorkInBackground() {
-        // init binder pool
-        //BinderPool.getInsance(getApplicationContext());
+
     }
 }

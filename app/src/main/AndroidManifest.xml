@@ -46,6 +46,14 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name="com.didi.virtualapk.service.ClientService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.kaolafm.sdk.client" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

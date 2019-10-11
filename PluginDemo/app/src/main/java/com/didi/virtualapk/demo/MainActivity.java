@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 
 import com.didi.virtualapk.demo.manager.UserManager;
 import com.didi.virtualapk.demo.model.User;
+import com.didi.virtualapk.demo.service.MyService;
 import com.didi.virtualapk.demo.utils.MyConstants;
 import com.didi.virtualapk.demo.utils.MyUtils;
 
@@ -33,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 intent.setClass(MainActivity.this, SecondActivity.class);
                 startActivity(intent);
             }
+        });
+        findViewById(R.id.startService).setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, MyService.class);
+            startService(intent);
         });
     }
 

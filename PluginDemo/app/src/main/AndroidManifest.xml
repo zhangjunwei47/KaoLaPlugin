@@ -126,7 +126,7 @@
         <service
             android:name="com.didi.virtualapk.demo.binderpool.BinderPoolService"
             android:process=":remote" />
-
+        <service android:name="com.didi.virtualapk.demo.service.MyService" />
         <activity
             android:name="com.didi.virtualapk.demo.binderpool.BinderPoolActivity"
             android:label="@string/title_activity_binder_pool">

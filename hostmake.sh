@@ -1,5 +1,5 @@
 ./gradlew clean assembleRelease
-adb install app/build/outputs/apk/release/app-release.apk
+adb install -r app/build/outputs/apk/release/app-release.apk
 cd ./PluginDemo
 ./gradlew clean assemblePlugin
 adb push app/build/outputs/apk/beijing/release/app-beijing-release.apk /sdcard/Test.apk

@@ -2,6 +2,7 @@ package com.didi.virtualapk.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 
 import rx.Subscriber;
 
@@ -26,10 +27,19 @@ public class PermissionManager {
         return mPermissionUtils.isGrant();
     }
 
+
     public void requestPermission(Activity context, Subscriber subscriber) {
         if (mPermissionUtils == null) {
             mPermissionUtils = new PermissionUtils(context);
         }
         mPermissionUtils.requestPermission(subscriber);
     }
+
+    public boolean isHasWriteStoragePermission(Context context) {
+        PackageManager pm = context.getPackageManager();
+        return (PackageManager.PERMISSION_GRANTED ==
+                pm.checkPermission("android.permission.WRITE_EXTERNAL_STORAGE", context.getPackageName()));
+    }
+
+
 }
