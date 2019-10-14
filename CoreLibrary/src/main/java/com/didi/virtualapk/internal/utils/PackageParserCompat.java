@@ -28,11 +28,15 @@ import java.io.File;
  * @author johnsonlee
  */
 public final class PackageParserCompat {
+    /**
+     * 是否支持degug
+     */
+    private static boolean isDebug = true;
 
     public static final PackageParser.Package parsePackage(final Context context, final File apk, final int flags) {
         try {
             if (Build.VERSION.SDK_INT >= 28
-                || (Build.VERSION.SDK_INT == 27 && Build.VERSION.PREVIEW_SDK_INT != 0)) { // Android P Preview
+                    || (Build.VERSION.SDK_INT == 27 && Build.VERSION.PREVIEW_SDK_INT != 0)) { // Android P Preview
                 return PackageParserPPreview.parsePackage(context, apk, flags);
             } else if (Build.VERSION.SDK_INT >= 24) {
                 return PackageParserV24.parsePackage(context, apk, flags);
@@ -41,7 +45,7 @@ public final class PackageParserCompat {
             } else {
                 return PackageParserLegacy.parsePackage(context, apk, flags);
             }
-    
+
         } catch (Throwable e) {
             throw new RuntimeException("error", e);
         }
@@ -52,9 +56,12 @@ public final class PackageParserCompat {
         static final PackageParser.Package parsePackage(Context context, File apk, int flags) throws Throwable {
             PackageParser parser = new PackageParser();
             PackageParser.Package pkg = parser.parsePackage(apk, flags);
-            Reflector.with(parser)
-                .method("collectCertificates", PackageParser.Package.class, boolean.class)
-                .call(pkg, false);
+            if (!isDebug) {
+                Reflector.with(parser)
+                        .method("collectCertificates", PackageParser.Package.class, boolean.class)
+                        .call(pkg, false);
+            }
+
             return pkg;
         }
     }
@@ -64,9 +71,12 @@ public final class PackageParserCompat {
         static final PackageParser.Package parsePackage(Context context, File apk, int flags) throws Throwable {
             PackageParser parser = new PackageParser();
             PackageParser.Package pkg = parser.parsePackage(apk, flags);
-            Reflector.with(parser)
-                .method("collectCertificates", PackageParser.Package.class, int.class)
-                .call(pkg, flags);
+            if (!isDebug) {
+                Reflector.with(parser)
+                        .method("collectCertificates", PackageParser.Package.class, int.class)
+                        .call(pkg, flags);
+            }
+
             return pkg;
         }
     }
@@ -76,7 +86,9 @@ public final class PackageParserCompat {
         static final PackageParser.Package parsePackage(final Context context, final File apk, final int flags) throws Throwable {
             PackageParser parser = new PackageParser();
             PackageParser.Package pkg = parser.parsePackage(apk, flags);
-            parser.collectCertificates(pkg, flags);
+            if (!isDebug) {
+                parser.collectCertificates(pkg, flags);
+            }
             return pkg;
         }
 
@@ -87,9 +99,12 @@ public final class PackageParserCompat {
         static final PackageParser.Package parsePackage(Context context, File apk, int flags) throws Throwable {
             PackageParser parser = new PackageParser(apk.getAbsolutePath());
             PackageParser.Package pkg = parser.parsePackage(apk, apk.getAbsolutePath(), context.getResources().getDisplayMetrics(), flags);
-            Reflector.with(parser)
-                .method("collectCertificates", PackageParser.Package.class, int.class)
-                .call(pkg, flags);
+            if (!isDebug) {
+                Reflector.with(parser)
+                        .method("collectCertificates", PackageParser.Package.class, int.class)
+                        .call(pkg, flags);
+            }
+
             return pkg;
         }
 
