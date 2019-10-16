@@ -1,0 +1,107 @@
+ext {
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "27.0.2",
+            minSdkVersion    : 18,
+            targetSdkVersion : 26,
+            versionCode      : 50100,
+            versionName      : "5.1.0"
+    ]
+
+    version = [
+            androidSupportSdkVersion: "27.1.1",
+            retrofitSdkVersion      : "2.5.0",
+            butterknifeSdkVersion   : "8.8.1",
+            rxlifecycle2SdkVersion  : "2.0.1",
+            canarySdkVersion        : "1.5.1",
+            glideSdkVersion         : "4.5.0",
+            okhttp3Verson           : "3.12.0",
+            dagger2Verson           : "2.16"
+    ]
+    dependencies = [
+            "appcompat-v7"        : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "support-v4"          : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "recyclerview-v7"     : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+            "annotations"         : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
+            "design"              : "com.android.support:design:${version["androidSupportSdkVersion"]}",
+            "cardview-v7"         : 'com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}',
+
+            "constraint"          : "com.android.support.constraint:constraint-layout:1.1.2",
+
+            "butterknife"         : "com.jakewharton:butterknife:${version["butterknifeSdkVersion"]}",
+            "butterknife-compiler": "com.jakewharton:butterknife-compiler:${version["butterknifeSdkVersion"]}",
+
+            "okhttp3"             : "com.squareup.okhttp3:okhttp:3.10.0",
+            "okhttp3-log"         : "com.squareup.okhttp3:logging-interceptor:${version["okhttp3Verson"]}",
+            "okhttp-urlconnection": "com.squareup.okhttp3:okhttp-urlconnection:${version["okhttp3Verson"]}",
+
+            "multidex"            : "com.android.support:multidex:1.0.0",
+            "leakcanary"          : 'com.squareup.leakcanary:leakcanary-android:1.3.1',
+            "rxandroid"           : "io.reactivex.rxjava2:rxjava:2.2.2",
+            "rxjava"              : "io.reactivex.rxjava2:rxandroid:2.1.0",
+
+            "sinaweibo"           : "com.sina.weibo.sdk:core:4.1.4:openDefaultRelease@aar",
+            "weixin"              : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+",
+
+            "jiguang-push"        : "cn.jiguang.sdk:jpush:3.1.1",
+            "jiguang-core"        : "cn.jiguang.sdk:jcore:1.1.9",
+
+            "zxing-library"       : "cn.yipianfengye.android:zxing-library:2.2",
+
+            "youmeng-analytics"   : "libs/umeng-analytics-7.3.1.jar",
+            "youmeng-common"      : "libs/umeng-common-1.3.1.jar",
+
+            "kaola-ad-adk"        : "libs/kl_ad_sdk_V1.1.5.jar",
+            "androideventbus"     : "org.simple:androideventbus:1.0.5",
+
+            "gson"                : "com.google.code.gson:gson:2.7",
+            "carlife"             : "com.baidu.carlife:carlife:1.0.6",
+
+            "volley"              : "com.android.volley:android-volley-library:1.0.4",
+
+            "logger"              : "com.orhanobut:logger:2.2.0",
+
+            "nineoldandroids"     : "com.nineoldandroids:library:2.4.0",
+
+            "blurry"              : "com.blurry.library:com-blurry-library:2.0.4",
+
+            "fastjson"            : "com.alibaba:fastjson:1.1.68.android",
+            "junit"               : "junit:junit:4.12",
+            "test-runner"         : "com.android.support.test:runner:1.0.1",
+            "test-espresso"       : "com.android.support.test.espresso:espresso-core:3.0.1",
+
+            "customwidget"        : "com.customwidget.library:custom-widget-lib:1.0.9",
+            "pulltorefresh"       : "com.handmark.pulltorefresh.library:pulltore-fresh-lib:1.1.4",
+
+            "emojicon"            : "com.rockerhieu.emojicon:library:1.0",
+
+            "acdd"                : "com.kaolafm.acdd:acdd:1.4.1@aar",
+            "ucrop"               : "com.kaolafm.ucrop:ucrop:1.5.0",
+            "fresco"              : "com.kaolafm.fresco:fresco:0.10.2",
+            "filedownloader"      : "com.kaolafm.filedownloader:com-kaolafm-filedownloader:0.3.3",
+            "opensdk"             : "com.kaolafm.sdk:opensdk:1.4.3",
+            "dagger2"             : "com.google.dagger:dagger:${version["dagger2Verson"]}",
+            "dagger2-comiler"     : "com.google.dagger:dagger-compiler:${version["dagger2Verson"]}",
+            "recyclerviewhelper"  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
+
+            "greendao"            : "org.greenrobot:greendao:3.2.2",
+            "greendaoplugin"      : "org.greenrobot:greendao-gradle-plugin:3.2.2",
+
+            "retrofit2"           : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit2-gson"      : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit2-rxjava2"   : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+            "kradio-base-util"    : "com.kaolafm:kradio-base-util:1.0.1",
+            "kradio-player-sdk"   : "com.kaolafm:kradio-player-sdk:1.0.1",
+            "kradio-playlist"     : "com.kaolafm:kradio-playlist:1.0.1",
+            "kradio-report"       : "com.kaolafm:kradio-report-sdk:1.0.1",
+            "openSDK"             : "com.kaolafm:open-sdk:1.4.0",
+            "exoplayer-core"      : "com.google.android.exoplayer:exoplayer-core:2.10.1",
+            "exoplayer-dash"      : "com.google.android.exoplayer:exoplayer-dash:2.10.1",
+
+            //https://github.com/HujiangTechnology/gradle_plugin_android_aspectjx
+            "aspectjx"            : "com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4",
+            //权限管理
+            "android-permissions1": "com.github.tbruyelle:rxpermissions:0.10.2",
+    ]
+}
+

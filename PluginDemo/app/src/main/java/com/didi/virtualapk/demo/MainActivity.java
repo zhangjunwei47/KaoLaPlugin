@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 
 import com.didi.virtualapk.demo.manager.UserManager;
 import com.didi.virtualapk.demo.model.User;
+import com.didi.virtualapk.demo.player.PlayerActivity;
 import com.didi.virtualapk.demo.service.MyService;
 import com.didi.virtualapk.demo.utils.MyConstants;
 import com.didi.virtualapk.demo.utils.MyUtils;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, SecondActivity.class);
+                intent.setClass(MainActivity.this, PlayerActivity.class);
                 startActivity(intent);
             }
         });

@@ -12,6 +12,9 @@ android {
         targetSdkVersion VERSION_TARGET_SDK
         versionName "1.0.0"
         versionCode 1
+        ndk {
+            abiFilters 'armeabi', 'x86'
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -49,6 +52,11 @@ android {
             }
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -62,6 +70,11 @@ dependencies {
 //    }
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation rootProject.ext.dependencies["kradio-base-util"]
+    implementation files('libs/OpenSdk_Player1.0.1.jar')
+    implementation rootProject.ext.dependencies["exoplayer-core"]
+    implementation rootProject.ext.dependencies["exoplayer-dash"]
+
 }
 
 apply plugin: 'com.didi.virtualapk.plugin'

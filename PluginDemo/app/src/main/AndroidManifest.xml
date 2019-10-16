@@ -101,6 +101,7 @@
                 <category android:name="android.intent.category._LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".player.PlayerActivity"/>
 
         <provider
             android:name="com.didi.virtualapk.demo.provider.BookProvider"
@@ -149,6 +150,8 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_xml_info" />
         </receiver>
+
+        <service android:name="com.kaolafm.opensdk.player.core.MediaPlayerService" />
 
     </application>
 

@@ -125,3 +125,7 @@
 -dontwarn com.didi.virtualapk.**
 -dontwarn android.**
 -keep class android.** { *; }
+
+
+-dontwarn com.kaolafm.sdk.**
+-keep class com.kaolafm.sdk.** { *; }

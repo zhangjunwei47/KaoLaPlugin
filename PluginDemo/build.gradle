@@ -1,4 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+
 buildscript {
     repositories {
         mavenCentral()
@@ -31,6 +33,9 @@ allprojects {
         maven { url "https://raw.githubusercontent.com/tingban/fragmentation/master" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
         maven { url "http://nexus2.tingyun.com/nexus/content/repositories/snapshots/" }
+        maven {
+            url "https://raw.githubusercontent.com/tingban/KRadioBaseUtil/master"
+        }
         google()
         jcenter()
         //todo 这句话的意思, 如果不加 找不到libs文件夹
