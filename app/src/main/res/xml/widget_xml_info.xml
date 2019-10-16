@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<appwidget-provider
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget_info_real"
+    android:minWidth="300dp"
     android:minHeight="180dp"
-    android:minWidth="300dp">
+    android:previewImage="@mipmap/timgxxxxx">
 
 </appwidget-provider>

@@ -15,15 +15,21 @@ public class KaoLaWidget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
+
+
     }
 
     @Override
     public void onEnabled(Context context) {
         super.onEnabled(context);
+        Intent intent = new Intent();
+        intent.setClass(context, UpdateWidgetService.class);
+        context.startService(intent);
     }
 
     @Override
     public void onDisabled(Context context) {
         super.onDisabled(context);
+
     }
 }

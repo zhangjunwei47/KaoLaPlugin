@@ -17,3 +17,8 @@ com.android.dex.DexException: Multiple dex files define Landroid/support/v4/acce
 	解决: "implementation 'com.android.support:appcompat-v7:27.0.2'"
 	
 ```
+#### 插件对widget支持调研
+* 方案一: 在插件中实现widget全部逻辑. (行不通, 系统无法通过 AndroidManifest文件找到 对widget支持, 所以无法加到系统 小部件里面)
+* 方案二: 在宿主AndroidManifest文件中提供相关配置, 并实现相关布局文件, 在插件中实现AppWidgetProvider相关代码. 插件service中更新widget会报找不到id的问题. 
+* 方案三: 在方案二基础上, 插件service中更新widget时替换布局文件. 也会报找不到id问题.
+* 方案四: 暂时没有好办法. 暂时只能在宿主里面实现widget的相关逻辑. 插件提供数据. 

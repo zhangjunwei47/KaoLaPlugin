@@ -151,6 +151,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_xml_info" />
         </receiver>
+        <service android:name=".widget.UpdateWidgetService"/>
 
         <service android:name="com.kaolafm.opensdk.player.core.MediaPlayerService" />
 

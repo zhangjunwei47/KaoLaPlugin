@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'com.hujiang.android-aspectjx'
-apply plugin: 'org.greenrobot.greendao'
+//apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion VERSION_COMPILE_SDK
     buildToolsVersion VERSION_BUILD_TOOLS
@@ -43,21 +43,21 @@ android {
             minifyEnabled false
             shrinkResources false
         }
-        if(!isBuildDebug.toBoolean()) {
+     //   if(!isBuildDebug.toBoolean()) {
             release {
                 minifyEnabled true
                 shrinkResources true
                 signingConfig signingConfigs.release
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             }
-        }
+      //  }
     }
     //配置数据库相关信息
-    greendao {
-        schemaVersion 1 //数据库版本号
-        daoPackage 'com.didi.virtualapk.demo.database.greendao'
-        targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
-    }
+//    greendao {
+//        schemaVersion 1 //数据库版本号
+//        daoPackage 'com.didi.virtualapk.demo.database.greendao'
+//        targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
+//    }
 
     sourceSets {
         main {

@@ -54,6 +54,19 @@
                 <action android:name="com.kaolafm.sdk.client" />
             </intent-filter>
         </service>
+
+        <receiver android:name="com.didi.virtualapk.demo.widget.KaoLaWidget">
+            <intent-filter android:priority="1000">
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.didi.virtualapk.demo.widget.action" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_xml_info" />
+        </receiver>
     </application>
 
 </manifest>

@@ -19,14 +19,14 @@ public class AspectTestLog {
     @Before("execution(* *..MainActivity+.on**(..))")
     public void method(JoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-        String className = joinPoint.getThis().getClass().getSimpleName();
+        String className = joinPoint.getThis().getClass().getName();
         Log.e(TAG, "classname: " + className + "  method:" + signature.getName());
     }
 
     @Before("execution(* *..KaoLaWidget+.on**(..))")
     public void methodWidget(JoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-        String className = joinPoint.getThis().getClass().getSimpleName();
+        String className = joinPoint.getThis().getClass().getName();
         Log.e(TAG, "classname: " + className + "  method:" + signature.getName());
     }
 }
