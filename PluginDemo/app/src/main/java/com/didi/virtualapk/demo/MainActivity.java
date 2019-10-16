@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
 
 import com.didi.virtualapk.demo.manager.UserManager;
 import com.didi.virtualapk.demo.model.User;
-import com.didi.virtualapk.demo.player.PlayerActivity;
 import com.didi.virtualapk.demo.service.MyService;
+import com.didi.virtualapk.demo.ui.DatabaseTestActivity;
+import com.didi.virtualapk.demo.ui.PlayerActivity;
+import com.didi.virtualapk.demo.ui.SecondActivity;
 import com.didi.virtualapk.demo.utils.MyConstants;
 import com.didi.virtualapk.demo.utils.MyUtils;
 
@@ -28,14 +28,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainx);
         UserManager.sUserId = 2;
-        findViewById(R.id.inLauncher).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, PlayerActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.inLauncher).setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
         });
+        findViewById(R.id.inPlayer).setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, PlayerActivity.class);
+            startActivity(intent);
+        });
+        findViewById(R.id.testDatabase).setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, DatabaseTestActivity.class);
+            startActivity(intent);
+        });
+
         findViewById(R.id.startService).setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, MyService.class);

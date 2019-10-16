@@ -5,30 +5,24 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/inLauncher"
+        android:id="@+id/initBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="进入主页面" />
+        android:text="初始化" />
 
     <Button
-        android:id="@+id/inPlayer"
+        android:id="@+id/writeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="进入播放器页面" />
+        android:text="写入" />
 
     <Button
-        android:id="@+id/testDatabase"
+        android:id="@+id/readBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="数据库测试" />
+        android:text="读" />
 
-    <Button
-        android:id="@+id/startService"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="开始service" />
 </LinearLayout>

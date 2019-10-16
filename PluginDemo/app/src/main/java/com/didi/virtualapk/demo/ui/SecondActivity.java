@@ -1,9 +1,10 @@
-package com.didi.virtualapk.demo;
+package com.didi.virtualapk.demo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.didi.virtualapk.demo.R;
 import com.didi.virtualapk.demo.fragment.LauncherFragment;
 
 import me.yokeyword.fragmentation.SupportActivity;

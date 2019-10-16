@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'com.hujiang.android-aspectjx'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion VERSION_COMPILE_SDK
     buildToolsVersion VERSION_BUILD_TOOLS
@@ -52,6 +52,13 @@ android {
             }
         }
     }
+    //配置数据库相关信息
+    greendao {
+        schemaVersion 1 //数据库版本号
+        daoPackage 'com.didi.virtualapk.demo.database.greendao'
+        targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
+    }
+
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
@@ -74,7 +81,11 @@ dependencies {
     implementation files('libs/OpenSdk_Player1.0.1.jar')
     implementation rootProject.ext.dependencies["exoplayer-core"]
     implementation rootProject.ext.dependencies["exoplayer-dash"]
-
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+    implementation('io.reactivex.rxjava2:rxandroid:2.0.2') {
+        exclude module: 'rxjava'
+    }
 }
 
 apply plugin: 'com.didi.virtualapk.plugin'

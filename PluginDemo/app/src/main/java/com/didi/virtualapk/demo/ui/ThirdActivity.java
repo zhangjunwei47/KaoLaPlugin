@@ -1,4 +1,4 @@
-package com.didi.virtualapk.demo;
+package com.didi.virtualapk.demo.ui;
 
 import com.didi.virtualapk.demo.R;
 

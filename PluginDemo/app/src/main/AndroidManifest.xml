@@ -62,11 +62,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.didi.virtualapk.demo.SecondActivity"
+            android:name="com.didi.virtualapk.demo.ui.SecondActivity"
             android:configChanges="orientation|screenSize|locale|layoutDirection|keyboard|screenLayout"
             android:label="B" />
         <activity
-            android:name="com.didi.virtualapk.demo.ThirdActivity"
+            android:name="com.didi.virtualapk.demo.ui.ThirdActivity"
             android:configChanges="screenLayout"
             android:label="C" />
         <activity
@@ -101,7 +101,8 @@
                 <category android:name="android.intent.category._LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".player.PlayerActivity"/>
+        <activity android:name=".ui.DatabaseTestActivity"/>
+        <activity android:name=".ui.PlayerActivity"/>
 
         <provider
             android:name="com.didi.virtualapk.demo.provider.BookProvider"

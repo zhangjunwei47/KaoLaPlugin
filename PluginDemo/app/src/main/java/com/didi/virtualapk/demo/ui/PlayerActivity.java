@@ -1,4 +1,4 @@
-package com.didi.virtualapk.demo.player;
+package com.didi.virtualapk.demo.ui;
 
 import android.content.ComponentName;
 import android.content.Context;
