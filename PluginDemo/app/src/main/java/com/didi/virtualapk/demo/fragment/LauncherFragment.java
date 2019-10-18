@@ -9,12 +9,11 @@ import android.widget.ImageView;
 
 import com.didi.virtualapk.demo.R;
 import com.kaolafm.base.BaseFragment;
+import com.kaolafm.test.TestFragment;
 
-import butterknife.BindView;
 
 
 public class LauncherFragment extends BaseFragment {
-    @BindView(R.id.iv1x)
     ImageView imageView;
 
     public static LauncherFragment getInstance() {
@@ -30,7 +29,8 @@ public class LauncherFragment extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        imageView.setOnClickListener(v -> extraTransaction().start(new SecondFragment()));
+        imageView = view.findViewById(R.id.iv1x);
+        imageView.setOnClickListener(v -> extraTransaction().start(new TestFragment()));
     }
 
     @Override

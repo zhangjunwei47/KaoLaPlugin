@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jakewharton.butterknife'
+//pply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion VERSION_COMPILE_SDK
@@ -45,10 +45,10 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.1'
     implementation 'com.android.support:appcompat-v7:27.0.2'
 
-    implementation('com.jakewharton:butterknife:8.8.1') {
-        exclude module: 'support-compat'
-    }
-    annotationProcessor('com.jakewharton:butterknife-compiler:8.8.1')
+//    implementation('com.jakewharton:butterknife:8.8.1') {
+//        exclude module: 'support-compat'
+//    }
+//    annotationProcessor('com.jakewharton:butterknife-compiler:8.8.1')
 
     implementation(name: 'fragmentation_core-debug', ext: 'aar')
     implementation(name: 'fragmentation-debug', ext: 'aar')

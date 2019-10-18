@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
 import me.yokeyword.fragmentation.SupportFragment;
 
 public abstract class BaseFragment extends SupportFragment {
@@ -18,8 +17,6 @@ public abstract class BaseFragment extends SupportFragment {
         View view;
         //如果通过布局id找不到view，就尝试直接获取view。
         view = inflater.inflate(getLayoutId(), container, false);
-
-        ButterKnife.bind(this, view);
         return view;
     }
 
