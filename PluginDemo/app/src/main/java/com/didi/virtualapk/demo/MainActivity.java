@@ -33,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
             intent.setClass(MainActivity.this, SecondActivity.class);
             startActivity(intent);
         });
-        findViewById(R.id.inPlayer).setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setClass(MainActivity.this, PlayerActivity.class);
-            startActivity(intent);
-        });
-        findViewById(R.id.testDatabase).setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setClass(MainActivity.this, DatabaseTestActivity.class);
-            startActivity(intent);
-        });
+//        findViewById(R.id.inPlayer).setOnClickListener(v -> {
+//            Intent intent = new Intent();
+//            intent.setClass(MainActivity.this, PlayerActivity.class);
+//            startActivity(intent);
+//        });
+//        findViewById(R.id.testDatabase).setOnClickListener(v -> {
+//            Intent intent = new Intent();
+//            intent.setClass(MainActivity.this, DatabaseTestActivity.class);
+//            startActivity(intent);
+//        });
 
         findViewById(R.id.startService).setOnClickListener(v -> {
             Intent intent = new Intent();
