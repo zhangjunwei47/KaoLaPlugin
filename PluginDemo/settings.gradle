@@ -1,1 +1,1 @@
-include ':app', ':lib-base', ':k-base-test'
+include ':app', ':lib-base', ':k-base-test', ':lib-base-module'

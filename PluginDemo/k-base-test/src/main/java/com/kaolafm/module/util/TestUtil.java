@@ -1,4 +1,4 @@
-package com.kaolafm.test.util;
+package com.kaolafm.module.util;
 
 import android.content.res.Configuration;
 

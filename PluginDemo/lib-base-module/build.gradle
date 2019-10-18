@@ -42,7 +42,7 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':lib-base-module')
+    api project(':lib-base')
     implementation(name: 'fragmentation_core-debug', ext: 'aar')
     implementation(name: 'fragmentation-debug', ext: 'aar')
     implementation 'com.android.support:appcompat-v7:27.0.2'
