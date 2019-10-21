@@ -34,5 +34,9 @@
         <item name="android:textColor">#ffffff</item>
     </style>
 
+    <style name="HomeBack">
+        <item name="android:layout_width">@dimen/x100</item>
+        <item name="android:layout_height">@dimen/y100</item>
+    </style>
 
 </resources>

@@ -26,6 +26,7 @@ public class TestModuleFragment extends SupportFragment {
         View view = inflater.inflate(R.layout.fragment_second_module, container, false);
         imageView = view.findViewById(R.id.testImageView);
         textView = view.findViewById(R.id.testView);
+        TestUtilModule.setStyle(textView);
         textView.setTextColor(getResources().getColor(R.color.kaolared));
         int padding = TestUtilModule.getGlobalPaddingLeft(2);
         return view;
