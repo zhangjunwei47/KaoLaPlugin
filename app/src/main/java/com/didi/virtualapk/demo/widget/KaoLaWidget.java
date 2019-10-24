@@ -4,7 +4,6 @@
 //import android.appwidget.AppWidgetProvider;
 //import android.content.Context;
 //import android.content.Intent;
-//import android.util.Log;
 //
 ///**
 // * 使用这种类覆盖方式不可以
@@ -24,7 +23,9 @@
 //    @Override
 //    public void onEnabled(Context context) {
 //        super.onEnabled(context);
-//
+//        Intent intent = new Intent();
+//        intent.setClassName(context, "com.didi.virtualapk.demo.widget.UpdateWidgetService");
+//        context.startService(intent);
 //    }
 //
 //    @Override
