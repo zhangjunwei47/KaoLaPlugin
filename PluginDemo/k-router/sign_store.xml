@@ -1,0 +1,9 @@
+<signingStores>
+    <storeName>release</storeName>
+    <storeFile>/edog-car-clinent-key.keystore</storeFile>
+    <storePassword>lkfmedogcar</storePassword>
+    <keyAlias>edog-car</keyAlias>
+    <keyPassword>lkfmedogcar</keyPassword>
+    <v1SigningEnabled>true</v1SigningEnabled>
+    <v2SigningEnabled>true</v2SigningEnabled>
+</signingStores>

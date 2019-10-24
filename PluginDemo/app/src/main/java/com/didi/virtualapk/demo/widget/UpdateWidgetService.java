@@ -52,9 +52,10 @@ public class UpdateWidgetService extends Service {
             Log.e(MyConstants.PLUGIN_TAG, "update view is null");
         } else {
             Log.e(MyConstants.PLUGIN_TAG, "update view is not null");
-            remoteViews.setImageViewResource(R.id.widgetIv, R.drawable.ic_plugin);
+            //remoteViews.setImageViewResource(R.id.widgetIv, R.drawable.ic_plugin);
             remoteViews.setTextViewText(R.id.widgetTv, "你好吗?");
-            ComponentName name = new ComponentName(context, KaoLaWidget.class);
+           // ComponentName name = new ComponentName(context, KaoLaWidget.class);
+            ComponentName name = new ComponentName(context, "com.didi.virtualapk.demo.widget.KaoLaWidget");
             am.updateAppWidget(name, remoteViews);
         }
     }

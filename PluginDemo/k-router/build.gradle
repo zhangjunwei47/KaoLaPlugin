@@ -1,0 +1,152 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.didi.virtualapk.host'
+apply plugin: 'android-aspectjx'
+
+
+android {
+    compileSdkVersion VERSION_COMPILE_SDK
+    buildToolsVersion VERSION_BUILD_TOOLS
+
+    defaultConfig {
+        applicationId "com.kaolafm.kradio.plugin_a"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 10001
+        versionName '1.0.1'
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+        ndk {
+            abiFilters 'armeabi', 'x86'
+        }
+
+        resConfigs "zh"
+    }
+    signingConfigs {
+        release {
+            storeFile file('edog-car-clinent-key.keystore')//签名文件路径，
+            //keystore的路径通常使用项目根目录的相对路径，但也可以是使用绝对路径，尽管这不推荐
+            storePassword 'lkfmedogcar' //密码
+            keyAlias 'edog-car'
+            keyPassword 'lkfmedogcar'  //密码
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('debug.keystore')
+            storePassword 'android'
+        }
+    }
+
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable false
+            jniDebuggable false
+            signingConfig null
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':app')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+
+    //api project(':lib-base')
+    api project(':k-base-test')
+
+    implementation(name: 'fragmentation_core-debug', ext: 'aar')
+    implementation(name: 'fragmentation-debug', ext: 'aar')
+    //implementation 'com.jakewharton:butterknife:8.8.1'
+//                exclude module: 'support-compat'
+//    }
+    //  annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation rootProject.ext.dependencies["kradio-base-util"]
+    // implementation rootProject.ext.dependencies["exoplayer-core"]
+    //implementation rootProject.ext.dependencies["exoplayer-dash"]
+    //implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+    implementation('io.reactivex.rxjava2:rxandroid:2.0.2') {
+        exclude module: 'rxjava'
+    }
+    //api project(':k-base-flavor')
+    api(dependent["appcompat-v4"]) {
+        exclude module: 'support-annotations'
+    }
+
+    api(dependent["appcompat-v7"]) {
+        exclude module: 'support-annotations'
+    }
+}
+
+/**
+ * 此逻辑目的为APP的VersionCode末尾追加各渠道配置的minorVersion内容
+ */
+//android.applicationVariants.all { variant ->
+//    variant.outputs.each { output ->
+//        String minorVersion = variant.productFlavors[0].getProperties().get("versionNameSuffix", null)
+//        if (minorVersion != null) {
+//            minorVersion = minorVersion.substring(1, minorVersion.length())
+//            output.versionCodeOverride = Integer.valueOf(android.defaultConfig.versionCode + minorVersion)
+//        }
+//    }
+//}
+//
+//configurations {
+//    runtime.exclude group: 'com.android.support', module: 'support-annotations'
+//}
+
+apply plugin: 'com.didi.virtualapk.plugin'
+
+virtualApk {
+    packageId = 0x5f // the package id of Resources.
+//    这里可以是绝对路径，也可以是相对路径'
+    targetHost = '../../KaoLaPlugin/app'
+    applyHostMapping = false //optional, default value: true.
+    forceUseHostDependences = true
+}
+
