@@ -5,6 +5,8 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -52,10 +54,12 @@ public class UpdateWidgetService extends Service {
             Log.e(MyConstants.PLUGIN_TAG, "update view is null");
         } else {
             Log.e(MyConstants.PLUGIN_TAG, "update view is not null");
-            //remoteViews.setImageViewResource(R.id.widgetIv, R.drawable.ic_plugin);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 3;
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_plugin, options);
+            remoteViews.setImageViewBitmap(R.id.widgetIv, bitmap);
             remoteViews.setTextViewText(R.id.widgetTv, "你好吗?");
-           // ComponentName name = new ComponentName(context, KaoLaWidget.class);
-            ComponentName name = new ComponentName(context, "com.didi.virtualapk.demo.widget.KaoLaWidget");
+            ComponentName name = new ComponentName(context, KaoLaWidget.class);
             am.updateAppWidget(name, remoteViews);
         }
     }
